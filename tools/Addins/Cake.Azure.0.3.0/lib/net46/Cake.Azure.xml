@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Cake.Azure</name>
+    </assembly>
+    <members>
+        <member name="T:Cake.Azure.AzureLoginAliases">
+            <summary>
+            Contains Cake aliases for running Azure login commands.
+            </summary>
+        </member>
+        <member name="M:Cake.Azure.AzureLoginAliases.AzureLogin(Cake.Core.ICakeContext,System.String,System.String,System.String)">
+            <summary>
+            Authenticates into Azure as a service principal with a password.
+            </summary>
+            <param name="context">The Cake context.</param>
+            <param name="tenantId">The Active Directory tenant ID.</param>
+            <param name="applicationId">The application ID.</param>
+            <param name="password">The service principal password.</param>
+            <returns>Azure credendials.</returns>
+        </member>
+        <member name="M:Cake.Azure.AzureLoginAliases.AzureLogin(Cake.Core.ICakeContext,System.String,System.String,System.Byte[],System.String)">
+            <summary>
+            Authenticates into Azure as a service principal with a certificate.
+            </summary>
+            <param name="context">The Cake context.</param>
+            <param name="tenantId">The Active Directory tenant ID.</param>
+            <param name="applicationId">The application ID.</param>
+            <param name="certificate">The certificate content.</param>
+            <param name="password">The certificate password.</param>
+            <returns>Azure credendials.</returns>
+        </member>
+        <member name="T:Cake.Azure.AzureResourceGroupAliases">
+            <summary>
+            Contains Cake aliases for running commands managing Azure resource groups.
+            </summary>
+        </member>
+        <member name="M:Cake.Azure.AzureResourceGroupAliases.AzureResourceGroupExists(Cake.Core.ICakeContext,Cake.Azure.Credentials,System.String,System.String)">
+            <summary>
+            Checks whether a resource group with the specified name exists.
+            </summary>
+            <param name="context">The Cake context.</param>
+            <param name="credentials">The Azure credentials.</param>
+            <param name="subscriptionId">The subscription ID.</param>
+            <param name="resourceGroupName">The resource group name.</param>
+            <returns><code>true</code>, if a resource group exists; <code>false</code>, otherwise.</returns>
+        </member>
+        <member name="M:Cake.Azure.AzureResourceGroupAliases.EnsureAzureResourceGroupExists(Cake.Core.ICakeContext,Cake.Azure.Credentials,System.String,System.String,System.String)">
+            <summary>
+            Creates a resource group if it doesn't exist.
+            </summary>
+            <param name="context">The Cake context.</param>
+            <param name="credentials">The Azure credentials.</param>
+            <param name="subscriptionId">The subscription ID.</param>
+            <param name="resourceGroupName">The resource group name.</param>
+            <param name="resourceGroupLocation">The resource group location.</param>
+        </member>
+        <member name="M:Cake.Azure.AzureResourceGroupAliases.DeleteAzureResourceGroup(Cake.Core.ICakeContext,Cake.Azure.Credentials,System.String,System.String)">
+            <summary>
+            Delete the specified resource group.
+            </summary>
+            <param name="context">The Cake context.</param>
+            <param name="credentials">The Azure credentials.</param>
+            <param name="subscriptionId">The subscription ID.</param>
+            <param name="resourceGroupName">The resource group name.</param>
+        </member>
+        <member name="M:Cake.Azure.AzureResourceGroupAliases.DeployAzureResourceGroup(Cake.Core.ICakeContext,Cake.Azure.Credentials,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Deploys resources to the resource group using the specified ARM template.
+            </summary>
+            <param name="context">The Cake context.</param>
+            <param name="credentials">The Azure credentials.</param>
+            <param name="subscriptionId">The subscription ID.</param>
+            <param name="resourceGroupName">The resource group name.</param>
+            <param name="deploymentName">The deployment name.</param>
+            <param name="template">The content of the ARM template file.</param>
+            <param name="parameters">The content of the ARM template parameters file.</param>
+            <returns>The outputs from the ARM template deployment.</returns>
+        </member>
+    </members>
+</doc>
